@@ -91,7 +91,7 @@ const upperCasedCharacters = [
 ];
 
 function generatePassword() {
-  // TODO: Write your code here
+  window.prompt("Hello")
 }
 
 // Write password to the #password input
