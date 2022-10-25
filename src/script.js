@@ -90,8 +90,9 @@ const upperCasedCharacters = [
   "Z",
 ];
 
+// used window.prompt to get window pop-up in browser when button is clicked to enter password
 function generatePassword() {
-  window.prompt("Hello")
+  window.prompt("Please enter your password")
 }
 
 // Write password to the #password input
