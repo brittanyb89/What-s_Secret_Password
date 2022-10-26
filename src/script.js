@@ -92,7 +92,7 @@ const upperCasedCharacters = [
 
 // used window.prompt to get window pop-up in browser when button is clicked to enter password
 function generatePassword() {
-  window.prompt("Enter Length of Password");
+  const password = window.prompt("Enter Length of Password");
 // user should enter the length of the password between 8 and 128; if <8 or >128, alert would display
   if (isNaN(password)) {
     window.alert("Incorrect value: Must enter a number between 8 and 128!")
@@ -112,7 +112,7 @@ function generatePassword() {
 
 };
 
-// Write password to the #password input
+// Write password to the #password input; use button click example
 function writePassword() {
   const password = generatePassword();
   const passwordText = document.querySelector("#password");
