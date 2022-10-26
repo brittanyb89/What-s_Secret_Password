@@ -92,7 +92,7 @@ const upperCasedCharacters = [
 
 // used window.prompt to get window pop-up in browser when button is clicked to enter password
 function generatePassword() {
-  window.prompt("Please enter your password")
+  window.prompt("Generate Your Password");
 }
 
 // Write password to the #password input
