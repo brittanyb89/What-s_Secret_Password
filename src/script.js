@@ -92,26 +92,10 @@ const upperCasedCharacters = [
 
 // used window.prompt to get window pop-up in browser when button is clicked to enter password
 function generatePassword(event) {
-  const numInput = window.prompt("Enter Length of Password");
+  const numInput = window.prompt("Enter Length of Password?");
   const password = parseInt(numInput);
 
-  // User is asked to select password criteria
-  const userInput = window.confirm("Would you like to include lowercased characters in your generated password?");
-
-  console.log(userInput);
-
-  const userInput2 = window.confirm("Would you like to include upperercased characters in your generated password?");
-
-  console.log(userInput2);
-
-  const userInput3 = window.confirm("Would you like to include numbers in your generated password?");
-
-  console.log(userInput3);
-
-  const userInput4 = window.confirm("Would you like to include special characters in your generated password?");
-
-  console.log(userInput4)
-// user should enter the length of the password between 8 and 128; if <8 or >128, alert would display
+// User should enter the length of the password between 8 and 128; if <8 or >128, alert would display
 
   if (isNaN(password)) {
     window.alert("Incorrect value: Must enter a number between 8 and 128!")
@@ -123,6 +107,22 @@ function generatePassword(event) {
     return
   };
 
+     // User is asked to select password criteria
+     const userInput = window.confirm("Would you like to include lowercased characters ( a, b, c...) in your generated password?");
+
+     console.log(userInput);
+
+     const userInput2 = window.confirm("Would you like to include upperercased characters ( A, B, C...) in your generated password?");
+
+     console.log(userInput2);
+
+     const userInput3 = window.confirm("Would you like to include numbers ( 1, 2, 3...) in your generated password?");
+
+     console.log(userInput3);
+
+     const userInput4 = window.confirm("Would you like to include special characters ( !, @, #....) in your generated password?");
+
+     console.log(userInput4);
 
 }
 
