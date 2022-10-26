@@ -92,14 +92,20 @@ const upperCasedCharacters = [
 
 // used window.prompt to get window pop-up in browser when button is clicked to enter password
 function generatePassword() {
-  let userInput = window.prompt("Length of password?");
-  let passwordLength = parseInt(userInput);
+  let userInput = window.prompt("Enter Password");
+  // called variable for lowercased, uppercased, numeric, and special characters to tell browser conditions of password entry.
+  //let passwordLength = ["lowerCasedCharacters", "upperCasedCharacters", "numericCharacters", "specialCharacters"];
 
   if (passwordLength < 8 || passwordLength > 128){
     window.alert("Password must be between 8 and 128 characters long!")
-  }
+    return
+  };
 
-  console.log(userInput)
+  //if (passwordLength === ["lowerCasedCharacters", "upperCasedCharacters", "numericCharacters", "specialCharacters"]) {
+    //console.log("Password Accepted!")
+  //};
+
+  // console.log(userInput);
 
 };
 
