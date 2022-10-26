@@ -94,8 +94,7 @@ const upperCasedCharacters = [
 function generatePassword(event) {
   const numInput = window.prompt("Enter Length of Password");
   const password = parseInt(numInput);
-  const smaller = 8;
-  const larger = 128;
+
 // user should enter the length of the password between 8 and 128; if <8 or >128, alert would display
 
   if (isNaN(password)) {
@@ -108,8 +107,7 @@ function generatePassword(event) {
     return
   };
 
-if (event.target.id === "generate") {
-  window.alert("Entry Accepted");
+
 }
   //if (passwordLength === ["lowerCasedCharacters", "upperCasedCharacters", "numericCharacters", "specialCharacters"]) {
     //console.log("Password Accepted!")
@@ -117,16 +115,30 @@ if (event.target.id === "generate") {
 
   // console.log(userInput);
 
-};
+//};
 
 
 // Write password to the #password input
+
+//let randomPassword = generateBtn[Math.floor(Math.random() * generateBtn.length)];
 function writePassword() {
   const password = generatePassword();
   const passwordText = document.querySelector("#password");
 
+  //for (const x=8; x < generateBtn.length; x+120) {
+      //console.log(generateBtn[x]);
+  //}
+
   passwordText.value = password;
 }
+//function selectPassword() {
+  //if (randomPassword === ["lowerCasedCharacters", "upperCasedCharacters", "numericCharacters", "specialCharacters"]) {
+    //console.log("Password Accepted!");
+//}
+//console.log('Password Criteria');
+//listPassword()
+//console.log('Select Password Criteria');
+//selectPassword()
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
