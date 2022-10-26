@@ -95,6 +95,22 @@ function generatePassword(event) {
   const numInput = window.prompt("Enter Length of Password");
   const password = parseInt(numInput);
 
+  // User is asked to select password criteria
+  const userInput = window.confirm("Would you like to include lowercased characters in your generated password?");
+
+  console.log(userInput);
+
+  const userInput2 = window.confirm("Would you like to include upperercased characters in your generated password?");
+
+  console.log(userInput2);
+
+  const userInput3 = window.confirm("Would you like to include numbers in your generated password?");
+
+  console.log(userInput3);
+
+  const userInput4 = window.confirm("Would you like to include special characters in your generated password?");
+
+  console.log(userInput4)
 // user should enter the length of the password between 8 and 128; if <8 or >128, alert would display
 
   if (isNaN(password)) {
@@ -107,25 +123,8 @@ function generatePassword(event) {
     return
   };
 
-  const userInput = window.confirm("Would you like to include lowercased characters in your generated password?");
-
-  const userInput2 = window.confirm("Would you like to include upperercased characters in your generated password?");
-
-  const userInput3 = window.confirm("Would you like to include numbers in your generated password?");
-
-  const userInput4 = window.confirm("Would you like to include special characters in your generated password?");
-
-  console.log(userInput)
 
 }
-  //if (passwordLength === ["lowerCasedCharacters", "upperCasedCharacters", "numericCharacters", "specialCharacters"]) {
-    //console.log("Password Accepted!")
-  //};
-
-  // console.log(userInput);
-
-//};
-
 
 // Write password to the #password input
 
