@@ -91,39 +91,37 @@ const upperCasedCharacters = [
 ];
 
 // used window.prompt to get window pop-up in browser when button is clicked to enter password
-const numberInput = window.prompt("Enter length of password. Choose between numbers 8 and 128!");
-
-// User is asked to select password criteria
-const userInput = window.confirm("Would you to include lowercased characters ( a, b, c,...) in your generated password?");
-
-const userInput2 = window.confirm("Would you like to include upperercased characters ( A, B, C...) in your generated password?");
-
-const userInput3 = window.confirm("Would you like to include numbers ( 1, 2, 3...) in your generated password?");
-
-const userInput4 = window.confirm("Would you like to include special characters ( !, @, #....) in your generated password?");
-// function generatePassword(event) {
-//   const numInput = window.prompt("Enter Length of Password?");
-//   const password = parseInt(numInput);
+function generatePassword(event) {
+  const numInput = window.prompt("Enter Length of Password?");
+  //const password = parseInt(numInput);
 
 // User should enter the length of the password between 8 and 128; if <8 or >128, alert would display
 
-//   if (isNaN(password)) {
-//     window.alert("Incorrect value: Must enter a number between 8 and 128!")
-//     return
-//   };
+  if (isNaN(password)) {
+    window.alert("Incorrect value: Must enter a number between 8 and 128!")
+    return
+  };
 
-//   if (password < 8 || password > 128){
-//     window.alert("Password must be between 8 and 128 characters long!")
-//     return
-//   };
+  if (password < 8 || password > 128){
+    window.alert("Password must be between 8 and 128 characters long!")
+    return
+  };
+     // User is asked to select password criteria
+     const userInput = window.confirm("Would you like to include lowercased characters ( a, b, c...) in your generated password?");
 
-// // refer to list of arrays at top of page
-//   if (lowerCasedCharacters) {
-//     message = "Valid Input!"
-//   }
+     const userInput2 = window.confirm("Would you like to include upperercased characters ( A, B, C...) in your generated password?");
+
+     const userInput3 = window.confirm("Would you like to include numbers ( 1, 2, 3...) in your generated password?");
+
+     const userInput4 = window.confirm("Would you like to include special characters ( !, @, #....) in your generated password?");
+
+// refer to list of arrays at top of page
+  if (lowerCasedCharacters) {
+    message = "Valid Input!"
+  }
 
 
-// }
+}
 
 // Write password to the #password input
 
