@@ -91,6 +91,14 @@ const upperCasedCharacters = [
 ];
 
 // used window.prompt to get window pop-up in browser when button is clicked to enter password
+function randomInt(min, max) {
+  return Math.floor(min + (1 - Math.random()))
+}
+
+function getRandomItem(list) {
+  return list[randomInt(0, list.length -1)]
+}
+
 function generatePassword() {
 
   const numInput = window.prompt("Choose length of password between 8 and 128.");
@@ -138,9 +146,16 @@ function generatePassword() {
       userSelection.push(specialCharacters)
     }
 
+    const generatePassword = ""
 
+    for (let i = 0; i < generatePassword; i++) {
+      let randomSelection = getRandomItem(userSelection)
+      let randomChar= getRandomItem(randomSelection)
+      console.log(randomChar)
+    }
 
 }
+
 
 // Write password to the #password input
 
