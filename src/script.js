@@ -92,43 +92,53 @@ const upperCasedCharacters = [
 
 // used window.prompt to get window pop-up in browser when button is clicked to enter password
 function randomInt(min, max) {
-  return Math.floor(min + (1 - Math.random()))
+  if (!max) {
+
+    max = min;
+
+    min = 0;
+
+  };
+
+let random = Math.random()
+  return Math.floor(min * (1 - random) + random * max)
 }
 
 function getRandomItem(list) {
-  return list[randomInt(0, list.length -1)]
+  return list[randomInt(list.length)]
 }
+
 
 function generatePassword() {
 
-  const numInput = window.prompt("Choose length of password between 8 and 128.");
+  const numInput = window.prompt("Choose length of password between 8 and 128.")
 
-  const password = parseInt(numInput);
+  const password = parseInt(numInput)
 
 // User should enter the length of the password between 8 and 128; if <8 or >128, alert would display
 
   if (isNaN(password)) {
     window.alert("Incorrect value: Must enter a number between 8 and 128!")
     return
-  };
+  }
 
   if (password < 8 || password > 128){
     window.alert("Password must be between 8 and 128 characters long!")
     return
-  };
+  }
 
      // User is asked to select password criteria
-     const userInput = window.confirm("Include lowercased characters ( a, b, c...) in your generated password?");
+     const userInput = window.confirm("Include lowercased characters ( a, b, c...) in your generated password?")
 
-     const userInput2 = window.confirm("Include upperercased characters ( A, B, C...) in your generated password?");
+     const userInput2 = window.confirm("Include upperercased characters ( A, B, C...) in your generated password?")
 
-     const userInput3 = window.confirm("Include numbers ( 1, 2, 3...) in your generated password?");
+     const userInput3 = window.confirm("Include numbers ( 1, 2, 3...) in your generated password?")
 
-     const userInput4 = window.confirm("Include special characters ( !, @, #....) in your generated password?");
+     const userInput4 = window.confirm("Include special characters ( !, @, #....) in your generated password?")
 
 // refer to list of arrays at top of page
 // created a user selector to gather options
-    const userSelection = [];
+    const userSelection = []
 // once user select at least 1 character,
     if (userInput === true) {
       userSelection.push(lowerCasedCharacters)
@@ -145,39 +155,32 @@ function generatePassword() {
     if (userInput4 === true) {
       userSelection.push(specialCharacters)
     }
+// will generate by default if nothing is selected by user
+    if (userSelection.length ===0) {
+      userSelection.push(upperCasedCharacters)
+    }
 
-    const generatePassword = ""
+    const generatePassword = "";
 
     for (let i = 0; i < generatePassword; i++) {
       let randomSelection = getRandomItem(userSelection)
       let randomChar= getRandomItem(randomSelection)
-      console.log(randomChar)
+      generatePassword += randomChar
     }
+
+    return generatePassword
 
 }
 
 
 // Write password to the #password input
-
-//let randomPassword = generateBtn[Math.floor(Math.random() * generateBtn.length)];
 function writePassword() {
   const password = generatePassword();
   const passwordText = document.querySelector("#password");
 
-  //for (const x=8; x < generateBtn.length; x+120) {
-      //console.log(generateBtn[x]);
-  //}
-
   passwordText.value = password;
+
 }
-//function selectPassword() {
-  //if (randomPassword === ["lowerCasedCharacters", "upperCasedCharacters", "numericCharacters", "specialCharacters"]) {
-    //console.log("Password Accepted!");
-//}
-//console.log('Password Criteria');
-//listPassword()
-//console.log('Select Password Criteria');
-//selectPassword()
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
