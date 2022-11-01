@@ -93,34 +93,50 @@ const upperCasedCharacters = [
 // used window.prompt to get window pop-up in browser when button is clicked to enter password
 function generatePassword() {
 
-  const numInput = window.prompt("Enter Length of Password?");
-  const parsed = numInput.parseInt (x, base);
-  if (numInput.isNaN(parsed)) {
+  const numInput = window.prompt("Choose length of password between 8 and 128.");
+
+  const password = parseInt(numInput);
+
+// User should enter the length of the password between 8 and 128; if <8 or >128, alert would display
+
+  if (isNaN(password)) {
+    window.alert("Incorrect value: Must enter a number between 8 and 128!")
     return
-//   const password = parseInt(numInput);
+  };
 
-// // User should enter the length of the password between 8 and 128; if <8 or >128, alert would display
+  if (password < 8 || password > 128){
+    window.alert("Password must be between 8 and 128 characters long!")
+    return
+  };
 
-//   if (isNaN(password)) {
-//     window.alert("Incorrect value: Must enter a number between 8 and 128!")
-//     return
-//   };
+     // User is asked to select password criteria
+     const userInput = window.confirm("Include lowercased characters ( a, b, c...) in your generated password?");
 
-//   if (password < 8 || password > 128){
-//     window.alert("Password must be between 8 and 128 characters long!")
-//     return
-//   };
+     const userInput2 = window.confirm("Include upperercased characters ( A, B, C...) in your generated password?");
 
-//      // User is asked to select password criteria
-//      const userInput = window.confirm("Include lowercased characters ( a, b, c...) in your generated password?");
+     const userInput3 = window.confirm("Include numbers ( 1, 2, 3...) in your generated password?");
 
-//      const userInput2 = window.confirm("Include upperercased characters ( A, B, C...) in your generated password?");
-
-//      const userInput3 = window.confirm("Include numbers ( 1, 2, 3...) in your generated password?");
-
-//      const userInput4 = window.confirm("Include special characters ( !, @, #....) in your generated password?");
+     const userInput4 = window.confirm("Include special characters ( !, @, #....) in your generated password?");
 
 // refer to list of arrays at top of page
+// created a user selector to gather options
+    const userSelection = [];
+// once user select at least 1 character,
+    if (userInput === true) {
+      userSelection.push(lowerCasedCharacters)
+    }
+
+    if (userInput2 === true) {
+      userSelection.push(upperCasedCharacters)
+    }
+
+    if (userInput3 === true) {
+      userSelection.push(numericCharacters)
+    }
+
+    if (userInput4 === true) {
+      userSelection.push(specialCharacters)
+    }
 
 
 
